@@ -73,26 +73,26 @@ class Imagem:
 
         return final_img
 
-    def invertido(self):
+    def invertido(self):                                    # Função para inverter os pixels da imagem
         return self.aplicar_por_pixel(lambda c: 255 - c)
 
-    def borrado(self, n):
-        kernel = criar_kernel_desfoque(n)
-        im = self.correlation(kernel)
-        im.tratar()
+    def borrado(self, n):                                   # Função para borrar a imagem
+        kernel = criar_kernel_desfoque(n)                   # Criar um kernel de desfoque
+        im = self.correlation(kernel)                       # Passar esse kernel de desfoque na imagem nova
+        im.tratar()                                         # Deixar os pixels "legais" na função tratar.
         return im
 
-    def focado(self, n):
-        borra = self.borrado(n)
+    def focado(self, n):                                    # Função de nitidez da imagem
+        borra = self.borrado(n)                             # Pegar a função borrada
         S = Imagem.new(self.largura, self.altura)
         for x in range(self.largura):
             for y in range(self.altura):
-                pxl = round(2*self.get_pixel(x, y) - borra.get_pixel(x, y))
-                S.set_pixel(x, y, pxl)
+                pxl = round(2*self.get_pixel(x, y) - borra.get_pixel(x, y)) # Fórmula passada no pset para fazer a função focado
+                S.set_pixel(x, y, pxl)                                      # Usar as novas cores na imagem nova
         S.tratar()
         return S
 
-    def bordas(self):
+    def bordas(self):                                   # Função para detectar bordas na imagem
         S = Imagem.new(self.largura, self.altura)
         k1 = self.correlation([[-1, 0, 1],
                                 [-2, 0, 2],
@@ -103,8 +103,8 @@ class Imagem:
 
         for x in range(self.largura):
             for y in range(self.altura):
-                pxl = round(math.sqrt((k1.get_pixel(x, y)**2) + k2.get_pixel(x, y)**2))
-                S.set_pixel(x, y, pxl)
+                pxl = round(math.sqrt((k1.get_pixel(x, y)**2) + k2.get_pixel(x, y)**2)) # Fórmula passada no pset para fazer a função bordas
+                S.set_pixel(x, y, pxl)                                                  # Usar as novas cores na imagem nova
         S.tratar()
         return S
 
