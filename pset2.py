@@ -9,8 +9,8 @@ from io import BytesIO
 from PIL import Image as PILImage
 
 
-def criar_kernel_desfoque(n):
-    kernel = [[1 / (n**2) for _ in range(n)] for _ in range(n)]
+def criar_kernel_desfoque(n):                                       # Essa função é necessária para a função de desfoque, para que assim tenha a multiplicação
+    kernel = [[1 / (n**2) for _ in range(n)] for _ in range(n)]     # do [1/(n**2)] pelos pixels da imagem
     return kernel
 
 
@@ -20,7 +20,7 @@ class Imagem:
         self.altura = altura
         self.pixels = pixels
 
-    def get_pixel(self, x, y):
+    def get_pixel(self, x, y):          # Função para receber a posição dos pixels e pegar a cor do índice.
         if x < 0:
             x = 0
         elif x >= self.largura:
@@ -32,20 +32,20 @@ class Imagem:
 
         return self.pixels[(x + y * self.largura)]
 
-    def set_pixel(self, x, y, c):
+    def set_pixel(self, x, y, c):       # Função para mudar cor para a passada na função
         self.pixels[(x + y * self.largura)] = c
 
-    def aplicar_por_pixel(self, func):
-        resultado = Imagem.new(self.largura, self.altura)
-        for x in range(resultado.largura):
-            for y in range(resultado.altura):
-                cor = self.get_pixel(x, y)
-                nova_cor = func(cor)
+    def aplicar_por_pixel(self, func):                          # Função que cria uma nova imagem com a mesma largura e altura da imagem base,
+        resultado = Imagem.new(self.largura, self.altura)       # e depois passa pixel por pixel da imagem base, pegando as cores da coordenadas
+        for x in range(resultado.largura):                      # do pixel passados (get_pixel(x, y)) e salvando na variável cor. Por fim,
+            for y in range(resultado.altura):                   # essa variável vai para dentro da
+                cor = self.get_pixel(x, y)                      # função passada no parâmetro e adicionada para outra variável, que será a nova_cor da
+                nova_cor = func(cor)                            # imagem nova.
                 resultado.set_pixel(x, y, nova_cor)
 
         return resultado
 
-    def tratar(self):  # função que pega
+    def tratar(self):  # Função que pega cada pixel e transforma o pixel em "legal" (o pixel fica em um intervalo de [0, 255] e inteiro)
         for x in range(self.largura):
             for y in range(self.altura):
                 pix = self.get_pixel(x, y)
@@ -55,12 +55,12 @@ class Imagem:
                     pix = 255
                 self.set_pixel(x, y, int(round(pix)))
 
-    def correlation(self, kn):  # A função 'correlation' que aplica o kernel na imagem
-        k = len(kn)
+    def correlation(self, kn):  # A função 'correlation' que aplica o kernel na imagem e multiplica os itens e, de acordo com kernel,
+        k = len(kn)             # ele fará as alterações necessárias
         centro = k // 2
         final_img = Imagem.new(self.largura, self.altura)  # Criar uma imagem em branco com a largura e altura da imagem base
 
-        for x in range(final_img.largura):
+        for x in range(final_img.largura):                 # For responsável por passar de pixel em pixel da nova imagem
             for y in range(final_img.altura):
                 novcor = 0
                 for w in range(k):
@@ -276,6 +276,23 @@ if __name__ == '__main__':
     # im1 = im.focado(11)
     # im1.salvar('imagens_salvas/python.png')
     # im1.mostrar()
+    # im.mostrar()
+
+    # Questão 5 — Questão escrita
+    # kn_1 = [[0, 0, 0],
+    #          [0, 2, 0],
+    #          [0, 0, 0]]
+    # kn_2 = [[1/9, 1/9, 1/9],
+    #          [1/9, 1/9, 1/9],
+    #          [1/9, 1/9, 1/9]]
+    # Agora, subtraindo os pixels pelas suas respectivas posições, o resultado será
+    #
+    # kn = [[-1/9, -1/9, -1/9],
+    #        [-1/9, 17/9, -1/9],
+    #        [-1/9, -1/9, -1/9]]
+    # im = Imagem.carregar('imagens_teste/python.png')
+    # focado = im.correlation(kn)
+    # focado.mostrar()
     # im.mostrar()
 
     # Questão 6
