@@ -1,5 +1,5 @@
 # Processamento de Imagens
-&nbsp; &nbsp; Este PSET é um algoritmo de processamento de imagens feito em python
+&nbsp; &nbsp; Este PSET é um algoritmo de processamento de imagens feito em python.
 
 ## PSET-02
 &nbsp; &nbsp; Este trabalho foi criado pelo aluno Roberto Bastos Souza, do curso de Ciência da Computação e turma CC3M da Universidade Vila Velha.
@@ -67,7 +67,7 @@ kn_2 = [[1/9, 1/9, 1/9],
 
 ## Questão 06
 ### Questão escrita
-&nbsp; &nbsp; O Kernel Kx detecta as bordas pela horizontal, enquanto o Ky decta as bordas pela vertical.
+&nbsp; &nbsp; O Kernel Kx detecta as bordas pela horizontal, enquanto o Ky detecta as bordas pela vertical.
 
 ### Imagem da obra com detecção das bordas, utilizando a função "def bordas"
 ![obra](https://user-images.githubusercontent.com/103335050/188286817-7d03e458-4bdf-4abd-9ebb-cb6d26789506.png)
