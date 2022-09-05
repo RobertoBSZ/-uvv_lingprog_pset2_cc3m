@@ -11,7 +11,8 @@ Professor: Abrantes
 ## Questão 02
 ### Imagem do peixe invertido, utilizando a função "def invertido"
 ![peixe](https://user-images.githubusercontent.com/103335050/188286813-f38ab579-f87b-4120-907f-c4a5268588e7.png)
-
+### Imagem do peixe original
+![peixe](https://user-images.githubusercontent.com/103335050/188497482-4fe5a3de-5b33-4612-8fda-0c8426a9bf27.png)
 
 ## Questão 03
 &nbsp; &nbsp; De acordo com a fórmula passada pelo abrantes:
@@ -37,11 +38,13 @@ Professor: Abrantes
 ## Questão 04
 ### Imagem do porco empurrada para a diagonal inferior direita, utilizando a função "def correlation"
 ![porco](https://user-images.githubusercontent.com/103335050/188286769-4a112d5d-97f6-48b1-96e0-6e77da612572.png)
+### Imagem do porco original
+![porco](https://user-images.githubusercontent.com/103335050/188497580-90e691a4-17d5-463e-88cf-0a1a4652168a.png)
 
-
-## Gato desfocado
+## Foto do gato desfocado
 ![gato](https://user-images.githubusercontent.com/103335050/188286781-42256b28-41a7-45db-8ebe-123f56fdb83c.png)
-
+### Foto do gato normal
+![gato](https://user-images.githubusercontent.com/103335050/188497636-5d323ee5-aae6-4f03-bea1-9f392e196234.png)
 
 ## Questão 05
 ### Questão escrita
@@ -64,11 +67,14 @@ kn_2 = [[1/9, 1/9, 1/9],
         [-1/9, -1/9, -1/9]].
 ### Imagem da cobra nítida, utilizando a função de nitidez "def focado"
 ![python](https://user-images.githubusercontent.com/103335050/188286787-0c23e1b5-4ac2-48a4-8f03-492b4a458838.png)
-
+### Imagem da cobra normal
+![python](https://user-images.githubusercontent.com/103335050/188497659-00c9082b-5808-42ac-a50b-3d63800dc4a6.png)
 ## Questão 06
 ### Questão escrita
 &nbsp; &nbsp; O Kernel Kx detecta as bordas pela horizontal, enquanto o Ky detecta as bordas pela vertical.
 
 ### Imagem da obra com detecção das bordas, utilizando a função "def bordas"
 ![obra](https://user-images.githubusercontent.com/103335050/188286817-7d03e458-4bdf-4abd-9ebb-cb6d26789506.png)
+
+#### Imagem da obra com detecção das bordas pela horizontal 
 
