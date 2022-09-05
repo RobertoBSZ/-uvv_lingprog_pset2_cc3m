@@ -78,7 +78,7 @@ kn_2 = [[1/9, 1/9, 1/9],
 
 #### Imagem da obra com detecção das bordas pela horizontal 
 ![obra kx](https://user-images.githubusercontent.com/103335050/188499080-98d7cffc-6976-4b66-b878-883d1f61c5db.png)
-#### Imagem da obra com detecção das bordas pela horizontal 
+#### Imagem da obra com detecção das bordas pela vertical
 ![obra ky](https://user-images.githubusercontent.com/103335050/188499105-e5aa9565-afd1-4f9a-b20c-41c882cfa00f.png)
 
 
