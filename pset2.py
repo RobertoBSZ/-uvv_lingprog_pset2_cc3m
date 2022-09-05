@@ -10,7 +10,7 @@ from PIL import Image as PILImage
 
 
 def criar_kernel_desfoque(n):                                       # Essa função é necessária para a função de desfoque, para que assim tenha a multiplicação
-    kernel = [[1 / (n**2) for _ in range(n)] for _ in range(n)]     # do [1/(n**2)] pelos pixels da imagem
+    kernel = [[1 / (n**2) for l in range(n)] for l in range(n)]     # do [1/(n**2)] pelos pixels da imagem
     return kernel
 
 
